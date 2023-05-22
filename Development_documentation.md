@@ -14,3 +14,4 @@ npm run dev
 npm run build
 
 
+开发环境 : 使用vscode + 插件Volar 
