@@ -3,7 +3,13 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
 
+
 <template>
+  <a-button type="primary">Primary Button</a-button>
+  <a-button>Default Button</a-button>
+  <a-button type="dashed">Dashed Button</a-button>
+  <a-button type="text">Text Button</a-button>
+  <a-button type="link">Link Button</a-button>
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
