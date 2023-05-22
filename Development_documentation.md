@@ -1,13 +1,16 @@
-1.安装vue
+1.搭建项目
 
 npm init vue@latest
 > managerial_system_demo
 > ...
 
-  npm install
-  npm run dev
+2.安装包依赖
+npm install
+
+3.调试模式启用
+npm run dev
+
+4.打包项目用于部署
+npm run build
 
 
-2.创建项目
-
-vue create managerial_system_demo
