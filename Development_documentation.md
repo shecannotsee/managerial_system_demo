@@ -15,3 +15,10 @@ npm run build
 
 
 开发环境 : 使用vscode + 插件Volar 
+
+
+添加额外的库
+// 组件库
+npm install ant-design-vue --save
+// http库
+npm install axios
