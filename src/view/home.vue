@@ -1,19 +1,11 @@
 <template>
-    <div>
-        home
-    </div>
-</template>
-
-<script>
-export default {
-    setup () {
-        
-
-        return {}
-    }
-}
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+    <div>home</div>
+      
+  </template>
+  
+  <style>
+  
+  </style>
+  
+  <script src="../ts/login.ts"></script>
+  
