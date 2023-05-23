@@ -1,28 +1,26 @@
-import { createRouter, createWebHistory } from "vue-router";
-const routes = [{
-        path: "/",
-        name: "home",
-        component: () =>
-            import ("../view/login.vue"),
-        children: []
-    },
-    {
-        path: "/login",
-        name: "login",
-        component: () =>
-            import ("../view/login/loginIndex.vue"),
+import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
+import App from "../App.vue"
+import home from "../view/home.vue"
+import login from "../view/login.vue"
 
-    },
-    {
-        path: "/exception",
-        name: "exception",
-        component: () =>
-            import ("../view/exception/exceptionIndex.vue"),
-
-    }
-]
 const router = createRouter({
-    history: createWebHistory(),
-    routes
+  history:createWebHashHistory(),
+  routes:[
+    {
+      path:"/",
+      name:"App",
+      component:App
+    },
+    {
+      path:"/home",
+      name: "home",
+      component:home
+    },
+    {
+      path:"/login",
+      name: "login",
+      component:login
+    }
+  ]
 });
 export default router;
