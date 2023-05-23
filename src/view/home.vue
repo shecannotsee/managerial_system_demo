@@ -1,11 +1,10 @@
 <template>
-    <div>home</div>
+  <div>home</div>
       
-  </template>
+</template>
   
-  <style>
+<style>
+</style>
   
-  </style>
-  
-  <script src="../ts/login.ts"></script>
+<script src="../ts/home.ts"></script>
   

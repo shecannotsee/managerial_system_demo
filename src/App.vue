@@ -4,8 +4,9 @@
       <a-button>首页</a-button>
     </router-link>
     <router-link to="/login">
-      <a-button type="primary">登录</a-button>
+        <a-button type="primary">登录</a-button>
     </router-link>
+
   </div>
 
   <router-view></router-view>
@@ -16,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 0vh; /* 可根据需要调整高度 */
+  height: 10vh; /* 可根据需要调整高度 */
 }
 *{
     padding: 0px;

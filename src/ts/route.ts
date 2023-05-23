@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, createWebHistory } from "vue-router
 import App from "../App.vue"
 import home from "../view/home.vue"
 import login from "../view/login.vue"
+import manage from "../view/manage.vue"
 
 const router = createRouter({
   history:createWebHashHistory(),
@@ -9,7 +10,7 @@ const router = createRouter({
     {
       path:"/",
       name:"App",
-      component:App
+      redirect:"/home"
     },
     {
       path:"/home",
@@ -20,7 +21,13 @@ const router = createRouter({
       path:"/login",
       name: "login",
       component:login
+    },
+    {
+      path:"/manage",
+      name:"manage",
+      component:manage
     }
   ]
 });
+
 export default router;
