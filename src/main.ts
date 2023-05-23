@@ -2,13 +2,17 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import Antd from 'ant-design-vue';
-import App from './App.vue'
 import 'ant-design-vue/dist/antd.css';
+import axios from 'axios';
 
-// function main() {
-  const app = createApp(App);
+import App from './App.vue'
 
-  app.use(Antd).mount('#app');
-// }
+const app = createApp(App);
 
-// main()
+app.use(Antd);
+
+// app.use(axios);
+
+app.mount('#app');
+
+
