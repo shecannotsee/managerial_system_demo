@@ -47,6 +47,15 @@ npm run build
 
 ### 开始开发
 
+#### 0.项目依赖库
+
+```bash
+# 路由库
+npm install vue-router
+```
+
+
+
 #### 1.添加额外的库
 
 ```bash
