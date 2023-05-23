@@ -1,9 +1,10 @@
-import './assets/main.css'
+// import './assets/main.css'
+
+import router from './ts/router'
 
 import { createApp } from 'vue'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
-import axios from 'axios';
 
 import App from './App.vue'
 
@@ -11,7 +12,7 @@ const app = createApp(App);
 
 app.use(Antd);
 
-// app.use(axios);
+app.use(router);
 
 app.mount('#app');
 
