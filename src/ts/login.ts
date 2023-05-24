@@ -1,4 +1,5 @@
 import { defineComponent, reactive, getCurrentInstance } from 'vue';
+import { getPassword , getToken} from "@/ts/api/services/user"
 
 interface FormState {
   username: string;
@@ -17,8 +18,8 @@ export default defineComponent({
     const router = currentInstance?.appContext.config.globalProperties.$router as Router;
 
     const onFinish = (values: any, route : any ) => {
-      
-      if (formState.username == "admin" && formState.password == "123456") {
+      const password = getPassword(values.userName);
+      if (formState.password == password) {
         console.log('Success:', values);
         router.push('/manage');
       } else {
