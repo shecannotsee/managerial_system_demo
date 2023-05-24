@@ -1,6 +1,4 @@
 import { defineComponent, reactive, getCurrentInstance } from 'vue';
-import { Router } from 'vue-router';
-
 
 interface FormState {
   username: string;
