@@ -1,4 +1,6 @@
-import { defineComponent, reactive } from 'vue';
+import { defineComponent, reactive, getCurrentInstance } from 'vue';
+import { Router } from 'vue-router';
+
 
 interface FormState {
   username: string;
@@ -12,9 +14,13 @@ export default defineComponent({
       password: '',
       remember: true,
     });
+
+    const currentInstance = getCurrentInstance();
+    const router = currentInstance?.appContext.config.globalProperties.$router as Router;
+
     const onFinish = (values: any) => {
       console.log('Success:', values);
-    //   this.$router.push('/manage');
+      router.push('/manage');
     };
 
     const onFinishFailed = (errorInfo: any) => {

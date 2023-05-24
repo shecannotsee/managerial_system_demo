@@ -45,6 +45,6 @@
 <style>
 </style>
 
-<script src="../ts/route.ts"></script>
+<script src="../ts/manage.ts"></script>
   
   
