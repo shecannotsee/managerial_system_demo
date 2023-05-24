@@ -1,11 +1,11 @@
 <template>
-    <div class="button-container">
-    <router-link to="/home">
-      <a-button>首页</a-button>
-    </router-link>
-    <router-link to="/login">
-      <a-button type="primary">登录</a-button>
-    </router-link>
+  <div class="button-container">
+  <router-link to="/home">
+    <a-button>首页</a-button>
+  </router-link>
+   <router-link to="/login">
+    <a-button type="primary">登录</a-button>
+  </router-link>
 
   </div>
   <a-form
@@ -18,7 +18,7 @@
     @finishFailed="onFinishFailed"
   >
     <a-form-item
-      label="Username"
+      label="账号"
       name="username"
       :rules="[{ required: true, message: 'Please input your username!' }]"
     >
@@ -26,7 +26,7 @@
     </a-form-item>
 
     <a-form-item
-      label="Password"
+      label="密码"
       name="password"
       :rules="[{ required: true, message: 'Please input your password!' }]"
     >
@@ -34,11 +34,11 @@
     </a-form-item>
 
     <a-form-item name="remember" :wrapper-col="{ offset: 8, span: 16 }">
-      <a-checkbox v-model:checked="formState.remember">Remember me</a-checkbox>
+      <a-checkbox v-model:checked="formState.remember">记住账号和密码</a-checkbox>
     </a-form-item>
 
     <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
-      <a-button type="primary" html-type="submit">Submit</a-button>
+      <a-button type="primary" html-type="submit">提交</a-button>
     </a-form-item>
   </a-form>
     

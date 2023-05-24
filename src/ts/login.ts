@@ -16,14 +16,20 @@ export default defineComponent({
     const currentInstance = getCurrentInstance();
     const router = currentInstance?.appContext.config.globalProperties.$router as Router;
 
-    const onFinish = (values: any) => {
-      console.log('Success:', values);
-      router.push('/manage');
+    const onFinish = (values: any, route : any ) => {
+      
+      if (formState.username == "admin" && formState.password == "123456") {
+        console.log('Success:', values);
+        router.push('/manage');
+      } else {
+        console.log("账号或者密码错误");
+      }
     };
 
     const onFinishFailed = (errorInfo: any) => {
       console.log('Failed:', errorInfo);
     };
+    
     return {
       formState,
       onFinish,
