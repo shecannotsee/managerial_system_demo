@@ -1,6 +1,8 @@
 import { defineComponent, reactive, getCurrentInstance } from 'vue';
 import { getPassword , getToken} from "@/ts/api/services/user"
+import type {Router} from "vue-router";
 
+console.log("login.vue");
 interface FormState {
   username: string;
   password: string;

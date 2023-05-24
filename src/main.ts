@@ -6,11 +6,15 @@ import 'ant-design-vue/dist/antd.css';
 import App from './App.vue'
 import router from './ts/route';
 
-const app = createApp(App);
+function main() {
+  const app = createApp(App);
 
-app.use(Antd);
-app.use(router);
+  app.use(Antd);
+  app.use(router);
 
-app.mount('#app');
+  app.mount('#app');
+}
+
+main();
 
 
