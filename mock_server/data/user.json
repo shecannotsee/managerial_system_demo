@@ -1,0 +1,9 @@
+{
+  "url" : "/login",
+  "note" : "================================================",
+  "data" : {
+    "userName": "admin",
+    "password": "123456",
+    "token": "UHiondsfNASasAUNP"
+  }
+}
