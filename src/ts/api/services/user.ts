@@ -8,7 +8,7 @@ export { getPassword , getToken };
 
 function getPassword(userName : string) : string {
   console.log(baseUrl);
-  axios.post(baseUrl+'/user', {
+  axios.post(baseUrl+'/login', {
     userName: userName
   })
   .then(function (response) {
