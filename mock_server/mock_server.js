@@ -31,18 +31,23 @@ const server = http.createServer((req, res) => {
 
 
     // 根据请求路径返回不同的 mock 数据
-    if (req.url === user.url) {
+    // url:/login
+    /*z*/if (req.url === user.url) {
       console.log("in:", user.url);
       const ret = user.data;
       res.statusCode = 200;
       res.end(JSON.stringify(ret));
       console.log("out:", user.url);
-    } else if (req.url === people.url) {
+    }
+    // url:
+    else if (req.url === people.url) {
       console.log("in:", people.url);
       const ret = people.data;
       res.statusCode = 200;
       res.end(JSON.stringify(ret));
-    } else {
+    }
+    // url:其他
+    else {
       console.log("404 for:", req.url);
       res.statusCode = 404;
       res.end(JSON.stringify({message: 'mock server:Not found'}));
