@@ -39,7 +39,62 @@ npm run dev
 npm run build
 ```
 
-#### 5.开发环境 : 
+#### 5.nginx使用
+
+下载nginx源码并编译[过程略]
+
+运行
+
+```bash
+# 使用指定目录的配置文件进行运行
+./sbin/nginx -c ./conf/nginx.conf
+```
+
+nginx.conf 内容如下
+
+```nginx
+worker_processes  1;
+
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    keepalive_timeout  65;
+
+
+    server {
+        # 监听端口为8088
+        listen       8088;
+        server_name  localhost;
+		
+        # 代理的静态资源路径如下配置
+        location / {
+            root   /home/shecannotsee/desktop/vue_project/managerial_system_demo/dist;
+            try_files $uri $uri/ /index.html;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+
+}
+
+```
+
+
+
+
+
+#### 6.开发环境 : 
 
 使用vscode + 插件Volar
 
