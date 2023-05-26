@@ -45,6 +45,6 @@
 <style>
 </style>
 
-<script src="../ts/manage.ts"></script>
+<script lang="ts" src="../ts/manage.ts"></script>
   
   

@@ -21,5 +21,5 @@
 }
 </style>
   
-<script src="../ts/home.ts"></script>
+<script lang="ts" src="../ts/home.ts"></script>
   

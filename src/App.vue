@@ -5,7 +5,6 @@
 </template>
 
 <style>
-// home and login button design
 .button-container {
   display: flex;
   justify-content: center;
@@ -22,5 +21,5 @@ html,body,#app{
 }
 </style>
 
-<script src="./ts/App.ts"></script>
+<script lang="ts" src="./ts/App.ts"></script>
   

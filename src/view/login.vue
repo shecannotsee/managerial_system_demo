@@ -52,4 +52,4 @@
 }
 </style>
 
-<script src="../ts/login.ts"></script>
+<script lang="ts" src="../ts/login.ts"></script>
