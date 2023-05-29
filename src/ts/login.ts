@@ -19,14 +19,24 @@ export default defineComponent({
     const currentInstance = getCurrentInstance();
     const router = currentInstance?.appContext.config.globalProperties.$router as Router;
 
-    const onFinish = (values: any, route : any ) => {
-      const password = getPassword(values.userName);
-      if (formState.password == password) {
-        console.log('Success:', values);
-        router.push('/manage');
-      } else {
-        alert("账号或者密码错误");
-        console.log("账号或者密码错误");
+    const onFinish = async (values: any, route : any ) => {
+      console.log('Success:', values);
+      try {
+        const password = await getPassword(formState.username);
+        console.log("input userName: ", formState.username);
+        console.log("input password: ", formState.password);
+
+        if (formState.password === password) {
+          console.log('Success:', values);
+          router.push('/manage');
+        } else {
+          alert("账号或者密码错误");
+          console.log("账号或者密码错误");
+        }
+      } catch (error) {
+        console.log("Failed to get password:", error);
+        // 处理获取密码失败的情况，例如弹出错误提示
+        alert("获取密码失败");
       }
     };
 
