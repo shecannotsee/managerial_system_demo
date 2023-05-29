@@ -10,27 +10,28 @@ interface user {
   token : string;
 };
 
-function getPassword(userName : string) : string {
-  console.log(baseUrl);
-  axios.post(baseUrl+'/login', {
-    userName: userName
-  })
-  .then(function (response) {
-    console.log("getPassword response :" + response);
-  })
-  .catch(function (error) {
+async function getPassword(userName: string): Promise<string> {
+  try {
+    const response = await axios.post(baseUrl + '/login', {
+      userName: userName
+    });
+    console.log("getPassword response:", response);
 
-    console.log("getPassword error :"+error);
-  });
-
-  const ret : user = {
-    name : "",
-    password : "123456",
-    token : ""
+    // 根据实际接口返回的数据结构，获取密码并返回
+    const password = response.data.password;
+    const ret : user = {
+      name : "",
+      password : "123456",
+      token : ""
+    };
+    return ret.password;
+  } catch (error) {
+    console.log("getPassword error:", error);
+    // 处理请求失败的情况，例如抛出异常或返回默认密码
+    throw new Error("Failed to get password");
   }
+}
 
-  return ret.password;
-};
 
 function getToken(userName : string) : string {
 
