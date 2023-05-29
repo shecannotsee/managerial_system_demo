@@ -1,5 +1,5 @@
 import { defineComponent, reactive, getCurrentInstance } from 'vue';
-import { getPassword , getToken} from "@/ts/api/user"
+import { getPassword , getToken} from "@/ts/api/login"
 import type { Router } from "vue-router";
 
 console.log("login.vue");

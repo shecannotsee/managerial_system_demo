@@ -1,10 +1,10 @@
 import axios from 'axios';
 import baseUrl from "@/ts/api/url"
 
-export type { user };
+export type { login };
 export { getPassword , getToken };
 
-interface user {
+interface login {
   name : string;
   password : string;
   token : string;
@@ -30,7 +30,7 @@ async function getPassword(userName: string): Promise<string> {
 
 function getToken(userName : string) : string {
 
-  const ret : user = {
+  const ret : login = {
     name : "",
     password : "123456",
     token : ""
