@@ -25,10 +25,8 @@ const columns = [
 // 通过接口获取真实数据
 let data : user = await getUser();
 
-methods : {
-  async function updateData() {
-    data  = await getUser();
-  }
+async function updateData() {
+  data  = await getUser();
 }
 
 export default defineComponent({
