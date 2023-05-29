@@ -1,6 +1,6 @@
 import { defineComponent, reactive, getCurrentInstance } from 'vue';
 import { getPassword , getToken} from "@/ts/api/user"
-import type {Router} from "vue-router";
+import type { Router } from "vue-router";
 
 console.log("login.vue");
 interface FormState {
@@ -25,11 +25,13 @@ export default defineComponent({
         console.log('Success:', values);
         router.push('/manage');
       } else {
+        alert("账号或者密码错误");
         console.log("账号或者密码错误");
       }
     };
 
     const onFinishFailed = (errorInfo: any) => {
+      alert("请输入账号和密码");
       console.log('Failed:', errorInfo);
     };
     
