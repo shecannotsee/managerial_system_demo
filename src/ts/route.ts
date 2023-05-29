@@ -35,7 +35,7 @@ const router = createRouter({
       redirect:"/manage/home",
       beforeEnter: (to, from, next) => {
         // TOOD:需要添加登录状态的检查方法,通常使用token来配合使用
-        const isLoggedIn = false; // 检查用户是否已登录
+        const isLoggedIn = true; // 检查用户是否已登录
         if (!isLoggedIn) {
           // 如果用户未登录，则进行拦截
           next("/login"); // 跳转到登录页面或其他处理
