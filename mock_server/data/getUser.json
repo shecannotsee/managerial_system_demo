@@ -2,7 +2,7 @@
   "url" : "/manage/getUser",
   "note" : "================================================",
   "data" : {
-    "people": [
+    "user": [
       {
         "key": "1",
         "name": "John Brown",

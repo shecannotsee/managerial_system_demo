@@ -1,4 +1,6 @@
 import { defineComponent } from 'vue';
+import type { user } from "@/ts/api/getUser.ts"
+import { getUser } from "@/ts/api/getUser.ts"
 
 const columns = [
     {
@@ -8,7 +10,7 @@ const columns = [
     {
         title: '年龄',
         className: 'column-money',
-        dataIndex: 'money',
+        dataIndex: 'age',
     },
     {
         title: '地址',
@@ -20,26 +22,7 @@ const columns = [
     },
 ];
 
-const data = [
-    {
-        key: '1',
-        name: 'John Brown',
-        money: '￥300,000.00',
-        address: 'New York No. 1 Lake Park',
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        money: '￥1,256,000.00',
-        address: 'London No. 1 Lake Park',
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        money: '￥120,000.00',
-        address: 'Sidney No. 1 Lake Park',
-    },
-];
+let data : user[] = await getUser();
 
 export default defineComponent({
     setup() {
