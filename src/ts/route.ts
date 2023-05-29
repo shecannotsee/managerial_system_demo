@@ -1,11 +1,11 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
-import home from "@/view/home.vue"
-import login from "@/view/login.vue"
-import manage from "@/view/manage.vue"
-import manageHome from "@/view/manageHome.vue"
-import timeAndDate from "@/view/timeAndDate.vue"
-import query from "@/view/query.vue"
-import setting from "@/view/setting.vue"
+import home         from "@/view/home.vue"
+import login        from "@/view/login.vue"
+import manage       from "@/view/manage.vue"
+import manageHome   from "@/view/manageHome.vue"
+import timeAndDate  from "@/view/timeAndDate.vue"
+import query        from "@/view/query.vue"
+import setting      from "@/view/setting.vue"
 
 
 export { router };
