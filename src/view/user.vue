@@ -5,7 +5,9 @@
         <a>{{ text }}</a>
       </template>
     </template>
-    <template #title>这里是开头</template>
+    <template #title>
+      <a-button type="primary" @click="updateData">刷新</a-button>
+      这里是开头</template>
     <template #footer>再往下没有了！</template>
   </a-table>
 </template>
