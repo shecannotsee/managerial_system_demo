@@ -9,7 +9,7 @@ interface user {
     name:string,
     age:number,
     address:string,
-    tag:[string]
+    tag:string[]
 }
 
 async function getUser():Promise<user> {
