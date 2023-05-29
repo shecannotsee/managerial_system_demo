@@ -56,6 +56,8 @@
       </a-layout-footer>
     </a-layout>
   </a-layout>
+  <!-- 回到顶部 -->
+  <a-back-top /><strong style="color: rgba(64, 64, 64, 0.6)"></strong>
 </template>
 
 <style>
