@@ -3,6 +3,8 @@ import home from "@/view/home.vue"
 import login from "@/view/login.vue"
 import manage from "@/view/manage.vue"
 
+export { router };
+
 const router = createRouter({
   history:createWebHashHistory(),
   routes:[
@@ -28,5 +30,3 @@ const router = createRouter({
     }
   ]
 });
-
-export default router;
