@@ -26,23 +26,22 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'application/json')
 
     // 读取mock数据,url是路径,data是数据
-    const user = readJsonFile("./data/user.json");
-    const people = readJsonFile("./data/people.json");
+    const user = readJsonFile("./data/login.json");
+    const people = readJsonFile("./data/getUser.json");
 
 
+    console.log("Request:", req.method, req.url, "HTTP", req.httpVersion); // 查看 req 对象的内容
     // 根据请求路径返回不同的 mock 数据
     // url:/login
     /*z*/if (req.url === user.url) {
-      console.log("Request:", req.method, req.url, "HTTP", req.httpVersion); // 查看 req 对象的内容
       const ret = user.data;
       res.statusCode = 200;
       res.write(JSON.stringify(ret));
       res.end();
       console.log("Response:", res.length); // 打印 res 对象的内容
     }
-    // url:
+    // url:/manage/getUser
     else if (req.url === people.url) {
-      console.log("Request:", req.method, req.url, "HTTP", req.httpVersion); // 查看 req 对象的内容
       const ret = people.data;
       res.statusCode = 200;
       res.write(JSON.stringify(ret));
@@ -50,7 +49,6 @@ const server = http.createServer((req, res) => {
     }
     // url:其他
     else {
-      console.log("404 for:", req.url, ":", req);
       res.statusCode = 404;
       res.end(JSON.stringify({message: 'mock server:Not found'}));
     }

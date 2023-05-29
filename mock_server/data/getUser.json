@@ -1,5 +1,5 @@
 {
-  "url" : "/manage/getPeople",
+  "url" : "/manage/getUser",
   "note" : "================================================",
   "data" : {
     "people": [
