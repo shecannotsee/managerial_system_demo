@@ -6,7 +6,7 @@
       </template>
     </template>
     <template #title>
-      <a-button type="primary" @click="updateData">刷新</a-button>
+      <a-button type="primary" v-on:click="refreshData">刷新</a-button>
       这里是开头</template>
     <template #footer>再往下没有了！</template>
   </a-table>

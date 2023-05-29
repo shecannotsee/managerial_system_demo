@@ -1,4 +1,5 @@
 import { defineComponent } from 'vue';
+import { ref } from 'vue';
 import type { user } from "@/ts/api/getUser.ts"
 import { getUser } from "@/ts/api/getUser.ts"
 
@@ -30,10 +31,10 @@ async function updateData() {
 }
 
 export default defineComponent({
-    setup() {
-        return {
-            data,
-            columns,
-        };
-    },
+  setup() {
+    return {
+      data,
+      columns,
+    };
+  },
 });
