@@ -26,23 +26,23 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'application/json')
 
     // 读取mock数据,url是路径,data是数据
-    const user = readJsonFile("./data/login.json");
-    const people = readJsonFile("./data/getUser.json");
+    const login = readJsonFile("./data/login.json");
+    const user = readJsonFile("./data/getUser.json");
 
 
     console.log("Request:", req.method, req.url, "HTTP", req.httpVersion); // 查看 req 对象的内容
     // 根据请求路径返回不同的 mock 数据
     // url:/login
-    /*z*/if (req.url === user.url) {
-      const ret = user.data;
+    /*z*/if (req.url === login.url) {
+      const ret = login.data;
       res.statusCode = 200;
       res.write(JSON.stringify(ret));
       res.end();
       console.log("Response:", res.length); // 打印 res 对象的内容
     }
     // url:/manage/getUser
-    else if (req.url === people.url) {
-      const ret = people.data;
+    else if (req.url === user.url) {
+      const ret = user.data;
       res.statusCode = 200;
       res.write(JSON.stringify(ret));
       res.end();
