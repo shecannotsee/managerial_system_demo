@@ -19,12 +19,7 @@ async function getPassword(userName: string): Promise<string> {
 
     // 根据实际接口返回的数据结构，获取密码并返回
     const password = response.data.password;
-    const ret : user = {
-      name : "",
-      password : "123456",
-      token : ""
-    };
-    return ret.password;
+    return password;
   } catch (error) {
     console.log("getPassword error:", error);
     // 处理请求失败的情况，例如抛出异常或返回默认密码
