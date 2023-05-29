@@ -1,19 +1,10 @@
 <template>
   <div>
-
+    <p>setting</p>
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-
-
-    return {}
-  }
-}
-</script>
-
-<style lang="scss" scoped>
-
+<style>
 </style>
+
+<script lang="ts" src="../ts/setting.ts"></script>

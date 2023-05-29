@@ -31,27 +31,30 @@ const router = createRouter({
     {
       path:"/manage",
       name:"manage",
-      component:manage
-    },
-    {
-      path:"/manage/home",
-      name:"manageHome",
-      component:manageHome
-    },
-    {
-      path:"/manage/timeAndDate",
-      name:"timeAndDate",
-      component:timeAndDate
-    },
-    {
-      path:"/manage/query",
-      name:"query",
-      component:query
-    },
-    {
-      path:"/manage/setting",
-      name:"setting",
-      component:setting
+      component:manage,
+      redirect:"/manage/home",
+      children:[
+        {
+          path:"/manage/home",
+          name:"manageHome",
+          component:manageHome
+        },
+        {
+          path:"/manage/timeAndDate",
+          name:"timeAndDate",
+          component:timeAndDate
+        },
+        {
+          path:"/manage/query",
+          name:"query",
+          component:query
+        },
+        {
+          path:"/manage/setting",
+          name:"setting",
+          component:setting
+        }
+      ]
     }
   ]
 });

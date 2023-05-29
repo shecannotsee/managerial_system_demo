@@ -1,19 +1,15 @@
 <template>
-  <div>
+  <div class="sss">
+    <p>manage home</p>
 
   </div>
+  <router-view/>
 </template>
 
-<script>
-export default {
-  setup() {
+<style>
+.sss {
 
-
-    return {}
-  }
 }
-</script>
-
-<style lang="scss" scoped>
-
 </style>
+
+<script lang="ts" src="../ts/manageHome.ts"></script>

@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/manage">
+<!--  <router-link to="/manage">-->
     <div class="container">
       <!-- 侧边栏 -->
       <div class="sidebar">
@@ -20,16 +20,20 @@
               :theme="theme"
           >
             <a-menu-item key="home">
+              <router-link to="/manage/home">
               <template #icon>
                 <HomeOutlined />
               </template>
               主页
+              </router-link>
             </a-menu-item>
             <a-menu-item key="timeAndDate">
+              <router-link to="/manage/timeAndDate">
               <template #icon>
                 <CalendarOutlined />
               </template>
               时间与日期
+              </router-link>
             </a-menu-item>
             <a-sub-menu key="query">
               <template #icon>
@@ -45,10 +49,12 @@
             </a-sub-menu>
 
             <a-menu-item key="setting">
+              <router-link to="/manage/setting">
               <template #icon>
                 <SettingOutlined />
               </template>
               设置
+              </router-link>
             </a-menu-item>
           </a-menu>
         </div>
@@ -71,7 +77,8 @@
       </div>
 
     </div>
-  </router-link>
+<!--  </router-link>-->
+  <router-view></router-view>
 </template>
 
 <style>

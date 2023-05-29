@@ -1,19 +1,10 @@
 <template>
   <div>
-
+    <p>time and date</p>
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-
-
-    return {}
-  }
-}
-</script>
-
-<style lang="scss" scoped>
-
+<style>
 </style>
+
+<script lang="ts" src="../ts/timeAndDate.ts"></script>
