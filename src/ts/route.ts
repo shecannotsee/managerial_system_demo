@@ -2,6 +2,11 @@ import { createRouter, createWebHashHistory, createWebHistory } from "vue-router
 import home from "@/view/home.vue"
 import login from "@/view/login.vue"
 import manage from "@/view/manage.vue"
+import manageHome from "@/view/manageHome.vue"
+import timeAndDate from "@/view/timeAndDate.vue"
+import query from "@/view/query.vue"
+import setting from "@/view/setting.vue"
+
 
 export { router };
 
@@ -27,6 +32,26 @@ const router = createRouter({
       path:"/manage",
       name:"manage",
       component:manage
+    },
+    {
+      path:"/manage/home",
+      name:"manageHome",
+      component:manageHome
+    },
+    {
+      path:"/manage/timeAndDate",
+      name:"timeAndDate",
+      component:timeAndDate
+    },
+    {
+      path:"/manage/query",
+      name:"query",
+      component:query
+    },
+    {
+      path:"/manage/setting",
+      name:"setting",
+      component:setting
     }
   ]
 });
