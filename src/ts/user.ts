@@ -10,7 +10,6 @@ const columns = [
     },
     {
         title: '年龄',
-        className: 'column-money',
         dataIndex: 'age',
     },
     {
