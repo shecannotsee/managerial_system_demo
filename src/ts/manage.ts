@@ -1,65 +1,32 @@
-import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
-import { defineComponent } from 'vue';
-const columns = [
-  {
-    name: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-  },
-  {
-    title: 'Action',
-    key: 'action',
-  },
-];
-
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
-
+import { defineComponent, reactive, toRefs } from 'vue';
+import {
+  MailOutlined,
+  CalendarOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
+} from '@ant-design/icons-vue';
+import type { MenuTheme } from 'ant-design-vue';
 export default defineComponent({
   components: {
-    SmileOutlined,
-    DownOutlined,
+    MailOutlined,
+    CalendarOutlined,
+    AppstoreOutlined,
+    SettingOutlined,
   },
   setup() {
+    const state = reactive({
+      theme: 'dark' as MenuTheme,
+      selectedKeys: ['1'],
+      openKeys: ['sub1'],
+    });
+    const changeTheme = (checked: boolean) => {
+      state.theme = checked ? 'dark' : 'light';
+    };
+
     return {
-      data,
-      columns,
+      ...toRefs(state),
+      changeTheme,
     };
   },
 });
+
