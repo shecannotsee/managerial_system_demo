@@ -6,6 +6,7 @@ import manageHome   from "@/view/manageHome.vue"
 import timeAndDate  from "@/view/timeAndDate.vue"
 import query        from "@/view/query.vue"
 import setting      from "@/view/setting.vue"
+import user         from "@/view/user.vue"
 
 export { router };
 
@@ -64,6 +65,11 @@ const router = createRouter({
           path:"/manage/setting",
           name:"setting",
           component:setting
+        },
+        {
+          path:"/manage/user",
+          name:"user",
+          component:user
         }
       ]
     }

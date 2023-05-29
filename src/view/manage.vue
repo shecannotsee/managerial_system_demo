@@ -23,7 +23,11 @@
               <span>查询</span>
             </span>
           </template>
-          <a-menu-item key="query_1">查找1</a-menu-item>
+          <a-menu-item key="query_1">
+            <router-link to="/manage/user">
+              查找用户
+            </router-link>
+          </a-menu-item>
           <a-menu-item key="query_2">查找2</a-menu-item>
           <a-sub-menu key="query-3" title="查找3-">
             <a-menu-item key="query-3_1">查找3-1</a-menu-item>
