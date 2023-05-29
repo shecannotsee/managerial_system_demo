@@ -33,6 +33,18 @@ const router = createRouter({
       name:"manage",
       component:manage,
       redirect:"/manage/home",
+      beforeEnter: (to, from, next) => {
+        // TOOD:需要添加登录状态的检查方法,通常使用token来配合使用
+        const isLoggedIn = false; // 检查用户是否已登录
+        if (!isLoggedIn) {
+          // 如果用户未登录，则进行拦截
+          next("/login"); // 跳转到登录页面或其他处理
+          console.log("geiwo huiqu denglu");
+        } else {
+          // 允许继续访问路由
+          next();
+        }
+      },
       children:[
         {
           path:"/manage/home",
