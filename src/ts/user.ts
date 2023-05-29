@@ -2,6 +2,7 @@ import { defineComponent } from 'vue';
 import type { user } from "@/ts/api/getUser.ts"
 import { getUser } from "@/ts/api/getUser.ts"
 
+// 表格设置
 const columns = [
     {
         title: '姓名',
@@ -22,7 +23,8 @@ const columns = [
     },
 ];
 
-let data : user[] = await getUser();
+// 通过接口获取真实数据
+let data : user= await getUser();
 
 export default defineComponent({
     setup() {
