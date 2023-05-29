@@ -1,107 +1,75 @@
 <template>
-<!--  <router-link to="/manage">-->
-    <div class="container">
+  <a-layout style="min-height: 100vh">
+    <a-layout-sider v-model:collapsed="collapsed" collapsible>
+      <div class="logo" />
       <!-- 侧边栏 -->
-      <div class="sidebar">
-        <div>
-          <a-switch class="switch"
-                    :checked="theme === 'dark'"
-                    checked-children="Dark"
-                    un-checked-children="Light"
-                    @change="changeTheme"
-          />
-          <br />
-          <br />
-          <a-menu
-              v-model:openKeys="openKeys"
-              v-model:selectedKeys="selectedKeys"
-              style="width: 200px"
-              mode="inline"
-              :theme="theme"
-          >
-            <a-menu-item key="home">
-              <router-link to="/manage/home">
-              <template #icon>
-                <HomeOutlined />
-              </template>
-              主页
-              </router-link>
-            </a-menu-item>
-            <a-menu-item key="timeAndDate">
-              <router-link to="/manage/timeAndDate">
-              <template #icon>
-                <CalendarOutlined />
-              </template>
-              时间与日期
-              </router-link>
-            </a-menu-item>
-            <a-sub-menu key="query">
-              <template #icon>
-                <AppstoreOutlined />
-              </template>
-              <template #title>查询</template>
-              <a-menu-item key="query_1">查找1</a-menu-item>
-              <a-menu-item key="query_2">查找2</a-menu-item>
-              <a-sub-menu key="query-3" title="查找3-">
-                <a-menu-item key="query-3_1">查找3-1</a-menu-item>
-                <a-menu-item key="query-3_2">查找3-2</a-menu-item>
-              </a-sub-menu>
-            </a-sub-menu>
-
-            <a-menu-item key="setting">
-              <router-link to="/manage/setting">
-              <template #icon>
-                <SettingOutlined />
-              </template>
-              设置
-              </router-link>
-            </a-menu-item>
-          </a-menu>
+      <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
+        <a-menu-item key="home">
+          <router-link to="/manage/home">
+            <HomeOutlined />
+            <span>主页</span>
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="timeAndDate">
+          <router-link to="/manage/timeAndDate">
+            <CalendarOutlined />
+            <span>时间与日期</span>
+          </router-link>
+        </a-menu-item>
+        <a-sub-menu key="query">
+          <template #title>
+            <span>
+              <AppstoreOutlined />
+              <span>查询</span>
+            </span>
+          </template>
+          <a-menu-item key="query_1">查找1</a-menu-item>
+          <a-menu-item key="query_2">查找2</a-menu-item>
+          <a-sub-menu key="query-3" title="查找3-">
+            <a-menu-item key="query-3_1">查找3-1</a-menu-item>
+            <a-menu-item key="query-3_2">查找3-2</a-menu-item>
+          </a-sub-menu>
+        </a-sub-menu>
+        <a-menu-item key="setting">
+          <router-link to="/manage/setting">
+            <SettingOutlined />
+            <span>设置</span>
+          </router-link>
+        </a-menu-item>
+      </a-menu>
+    </a-layout-sider>
+    <a-layout>
+      <!-- 内容导航 -->
+      <a-layout-header style="background: #fff; padding: 0" />
+      <!-- 预留其他页面 -->
+      <a-layout-content style="margin: 0 16px">
+        <a-breadcrumb style="margin: 16px 0">
+          <a-breadcrumb-item>User</a-breadcrumb-item>
+          <a-breadcrumb-item>Bill</a-breadcrumb-item>
+        </a-breadcrumb>
+        <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
+          <router-view></router-view>
         </div>
-      </div>
-      <!-- 导航栏 -->
-      <div class="TopNavigationBar">
-        <a-breadcrumb separator=">">
-          <a-breadcrumb-item>Home</a-breadcrumb-item>
-          <a-breadcrumb-item href="">Application Center</a-breadcrumb-item>
-          <a-breadcrumb-item href="">Application List</a-breadcrumb-item>
-          <a-breadcrumb-item>An Application</a-breadcrumb-item>
-        </a-breadcrumb>
-        <a-breadcrumb>
-          <template #separator><span style="color: red">></span></template>
-          <a-breadcrumb-item>Home</a-breadcrumb-item>
-          <a-breadcrumb-item href="">Application Center</a-breadcrumb-item>
-          <a-breadcrumb-item href="">Application List</a-breadcrumb-item>
-          <a-breadcrumb-item>An Application</a-breadcrumb-item>
-        </a-breadcrumb>
-      </div>
-
-    </div>
-<!--  </router-link>-->
-  <router-view></router-view>
+      </a-layout-content>
+      <a-layout-footer style="text-align: center">
+        Ant Design ©2018 Created by Ant UED
+      </a-layout-footer>
+    </a-layout>
+  </a-layout>
 </template>
 
 <style>
-.container {
-  display: flex;
-  height: 100vh; /* 设置父容器占据整个页面高度 */
+#components-layout-demo-side .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
 }
-/* 侧边栏调整 */
-.sidebar {
-  position: relative;
-  width: 200px; /* 侧边栏宽度 */
-  background-color: #F6F4F0; /* 侧边栏背景色 */
-  overflow-y: auto; /* 添加滚动条 */
+
+.site-layout .site-layout-background {
+  background: #fff;
 }
-.TopNavigationBar {
-  flex: 1; /* 占据剩余空间 */
-  background-color: #FFFFFF; /* 导航栏背景色 */
-}
-.switch {
-  position: relative;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+[data-theme='dark'] .site-layout .site-layout-background {
+  background: #141414;
 }
 </style>
 
