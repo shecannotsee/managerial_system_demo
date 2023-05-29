@@ -21,7 +21,7 @@
       name="username"
       :rules="[{ required: true, message: 'Please input your username!' }]"
     >
-      <a-input v-model:value="formState.username" />
+      <a-input v-model:value="formState.username" style="width: 300px"/>
     </a-form-item>
 
     <a-form-item
@@ -29,7 +29,7 @@
       name="password"
       :rules="[{ required: true, message: 'Please input your password!' }]"
     >
-      <a-input-password v-model:value="formState.password" />
+      <a-input-password v-model:value="formState.password" style="width: 300px"/>
     </a-form-item>
 
     <a-form-item name="remember" :wrapper-col="{ offset: 8, span: 16 }">
