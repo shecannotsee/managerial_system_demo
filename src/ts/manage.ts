@@ -17,7 +17,7 @@ export default defineComponent({
     const state = reactive({
       theme: 'dark' as MenuTheme,
       selectedKeys: ['1'],
-      openKeys: ['sub1'],
+      openKeys: ['query'],
     });
     const changeTheme = (checked: boolean) => {
       state.theme = checked ? 'dark' : 'light';

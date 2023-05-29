@@ -38,7 +38,7 @@
               <template #title>查询</template>
               <a-menu-item key="query_1">查找1</a-menu-item>
               <a-menu-item key="query_2">查找2</a-menu-item>
-              <a-sub-menu key="query-3" title="找3">
+              <a-sub-menu key="query-3" title="查找3-">
                 <a-menu-item key="query-3_1">查找3-1</a-menu-item>
                 <a-menu-item key="query-3_2">查找3-2</a-menu-item>
               </a-sub-menu>
