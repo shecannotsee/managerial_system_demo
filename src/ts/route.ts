@@ -7,7 +7,6 @@ import timeAndDate  from "@/view/timeAndDate.vue"
 import query        from "@/view/query.vue"
 import setting      from "@/view/setting.vue"
 
-
 export { router };
 
 const router = createRouter({
