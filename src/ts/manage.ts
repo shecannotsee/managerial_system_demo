@@ -1,6 +1,6 @@
 import { defineComponent, reactive, toRefs } from 'vue';
 import {
-  MailOutlined,
+  HomeOutlined,
   CalendarOutlined,
   AppstoreOutlined,
   SettingOutlined,
@@ -8,7 +8,7 @@ import {
 import type { MenuTheme } from 'ant-design-vue';
 export default defineComponent({
   components: {
-    MailOutlined,
+    HomeOutlined,
     CalendarOutlined,
     AppstoreOutlined,
     SettingOutlined,

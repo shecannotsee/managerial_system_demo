@@ -1,63 +1,77 @@
 <template>
-  <div class="container">
-    <!-- 导航栏 -->
-    <!-- 侧边栏 -->
-    <div class="sidebar">
-      <div>
-        <a-switch class="switch"
-            :checked="theme === 'dark'"
-            checked-children="Dark"
-            un-checked-children="Light"
-            @change="changeTheme"
-        />
-        <br />
-        <br />
-        <a-menu
-            v-model:openKeys="openKeys"
-            v-model:selectedKeys="selectedKeys"
-            style="width: 200px"
-            mode="inline"
-            :theme="theme"
-        >
-          <a-menu-item key="1">
-            <template #icon>
-              <MailOutlined />
-            </template>
-            Navigation One
-          </a-menu-item>
-          <a-menu-item key="2">
-            <template #icon>
-              <CalendarOutlined />
-            </template>
-            Navigation Two
-          </a-menu-item>
-          <a-sub-menu key="sub1">
-            <template #icon>
-              <AppstoreOutlined />
-            </template>
-            <template #title>Navigation Three</template>
-            <a-menu-item key="3">Option 3</a-menu-item>
-            <a-menu-item key="4">Option 4</a-menu-item>
-            <a-sub-menu key="sub1-2" title="Submenu">
-              <a-menu-item key="5">Option 5</a-menu-item>
-              <a-menu-item key="6">Option 6</a-menu-item>
+  <router-link to="/manage">
+    <div class="container">
+      <!-- 侧边栏 -->
+      <div class="sidebar">
+        <div>
+          <a-switch class="switch"
+                    :checked="theme === 'dark'"
+                    checked-children="Dark"
+                    un-checked-children="Light"
+                    @change="changeTheme"
+          />
+          <br />
+          <br />
+          <a-menu
+              v-model:openKeys="openKeys"
+              v-model:selectedKeys="selectedKeys"
+              style="width: 200px"
+              mode="inline"
+              :theme="theme"
+          >
+            <a-menu-item key="home">
+              <template #icon>
+                <HomeOutlined />
+              </template>
+              主页
+            </a-menu-item>
+            <a-menu-item key="timeAndDate">
+              <template #icon>
+                <CalendarOutlined />
+              </template>
+              时间与日期
+            </a-menu-item>
+            <a-sub-menu key="query">
+              <template #icon>
+                <AppstoreOutlined />
+              </template>
+              <template #title>查询</template>
+              <a-menu-item key="query_1">查找1</a-menu-item>
+              <a-menu-item key="query_2">查找2</a-menu-item>
+              <a-sub-menu key="query-3" title="找3">
+                <a-menu-item key="query-3_1">查找3-1</a-menu-item>
+                <a-menu-item key="query-3_2">查找3-2</a-menu-item>
+              </a-sub-menu>
             </a-sub-menu>
-          </a-sub-menu>
-          <a-sub-menu key="sub2">
-            <template #icon>
-              <SettingOutlined />
-            </template>
-            <template #title>Navigation Four</template>
-            <a-menu-item key="7">Option 7</a-menu-item>
-            <a-menu-item key="8">Option 8</a-menu-item>
-            <a-menu-item key="9">Option 9</a-menu-item>
-            <a-menu-item key="10">Option 10</a-menu-item>
-          </a-sub-menu>
-        </a-menu>
-      </div>
-    </div>
 
-  </div>
+            <a-menu-item key="setting">
+              <template #icon>
+                <SettingOutlined />
+              </template>
+              设置
+            </a-menu-item>
+          </a-menu>
+        </div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="TopNavigationBar">
+        <a-breadcrumb separator=">">
+          <a-breadcrumb-item>Home</a-breadcrumb-item>
+          <a-breadcrumb-item href="">Application Center</a-breadcrumb-item>
+          <a-breadcrumb-item href="">Application List</a-breadcrumb-item>
+          <a-breadcrumb-item>An Application</a-breadcrumb-item>
+        </a-breadcrumb>
+        <a-breadcrumb>
+          <template #separator><span style="color: red">></span></template>
+          <a-breadcrumb-item>Home</a-breadcrumb-item>
+          <a-breadcrumb-item href="">Application Center</a-breadcrumb-item>
+          <a-breadcrumb-item href="">Application List</a-breadcrumb-item>
+          <a-breadcrumb-item>An Application</a-breadcrumb-item>
+        </a-breadcrumb>
+      </div>
+
+    </div>
+  </router-link>
 </template>
 
 <style>
@@ -71,6 +85,10 @@
   width: 200px; /* 侧边栏宽度 */
   background-color: #F6F4F0; /* 侧边栏背景色 */
   overflow-y: auto; /* 添加滚动条 */
+}
+.TopNavigationBar {
+  flex: 1; /* 占据剩余空间 */
+  background-color: #FFFFFF; /* 导航栏背景色 */
 }
 .switch {
   position: relative;
