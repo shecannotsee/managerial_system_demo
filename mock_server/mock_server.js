@@ -33,22 +33,24 @@ const server = http.createServer((req, res) => {
     // 根据请求路径返回不同的 mock 数据
     // url:/login
     /*z*/if (req.url === user.url) {
-      console.log("in:", user.url);
+      console.log("Request:", req.method, req.url, "HTTP", req.httpVersion); // 查看 req 对象的内容
       const ret = user.data;
       res.statusCode = 200;
-      res.end(JSON.stringify(ret));
-      console.log("out:", user.url);
+      res.write(JSON.stringify(ret));
+      res.end();
+      console.log("Response:", res.length); // 打印 res 对象的内容
     }
     // url:
     else if (req.url === people.url) {
-      console.log("in:", people.url);
+      console.log("Request:", req.method, req.url, "HTTP", req.httpVersion); // 查看 req 对象的内容
       const ret = people.data;
       res.statusCode = 200;
-      res.end(JSON.stringify(ret));
+      res.write(JSON.stringify(ret));
+      res.end();
     }
     // url:其他
     else {
-      console.log("404 for:", req.url);
+      console.log("404 for:", req.url, ":", req);
       res.statusCode = 404;
       res.end(JSON.stringify({message: 'mock server:Not found'}));
     }
