@@ -1,7 +1,13 @@
 <template>
-  <div>
-    <p>user</p>
-  </div>
+  <a-table :columns="columns" :data-source="data" bordered>
+    <template #bodyCell="{ column, text }">
+      <template v-if="column.dataIndex === 'name'">
+        <a>{{ text }}</a>
+      </template>
+    </template>
+    <template #title>这里是开头</template>
+    <template #footer>再往下没有了！</template>
+  </a-table>
 </template>
 
 <style>
