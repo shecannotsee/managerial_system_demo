@@ -11,4 +11,8 @@
     <template #footer>再往下没有了！</template>
   </a-table>
 </template>
+
+<style>
+</style
+>
 <script lang="ts" src="../ts/user.ts"></script>
