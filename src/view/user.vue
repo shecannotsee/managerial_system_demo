@@ -13,6 +13,6 @@
 </template>
 
 <style>
-</style
->
+</style>
+
 <script lang="ts" src="../ts/user.ts"></script>
