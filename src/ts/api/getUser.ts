@@ -5,11 +5,11 @@ export type { user };
 export { getUser };
 
 interface user {
-    key:string,
-    name:string,
-    age:number,
-    address:string,
-    tag:string[]
+  key:string,
+  name:string,
+  age:number,
+  address:string,
+  tag:string[]
 }
 
 async function getUser() :Promise<user[]> {
