@@ -1,12 +1,14 @@
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
-import home         from "@/view/home.vue"
-import login        from "@/view/login.vue"
-import manage       from "@/view/manage.vue"
-import manageHome   from "@/view/manageHome.vue"
-import timeAndDate  from "@/view/timeAndDate.vue"
-import query        from "@/view/query.vue"
-import setting      from "@/view/setting.vue"
-import user         from "@/view/user.vue"
+import home           from "@/view/home.vue"
+import login          from "@/view/login.vue"
+import manage         from "@/view/manage.vue"
+import manageHome     from "@/view/manageHome.vue"
+import timeAndDate    from "@/view/timeAndDate.vue"
+import query          from "@/view/query.vue"
+import setting        from "@/view/setting.vue"
+import user           from "@/view/user.vue"
+import project        from "@/view/project.vue"
+import projectByMonth from "@/view/projectByMonth.vue"
 
 export { router };
 
@@ -70,7 +72,18 @@ const router = createRouter({
           path:"/manage/user",
           name:"user",
           component:user
+        },
+        {
+          path:"/manage/project",
+          name:"project",
+          component:project
+        },
+        {
+          path:"/manage/projectByMonth",
+          name:"projectByMonth",
+          component:projectByMonth
         }
+
       ]
     }
   ]

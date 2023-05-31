@@ -28,7 +28,16 @@
               查找用户
             </router-link>
           </a-menu-item>
-          <a-menu-item key="query_2">查找2</a-menu-item>
+          <a-menu-item key="query_2">
+            <router-link to="/manage/project">
+              查找项目
+            </router-link>
+          </a-menu-item>
+          <a-menu-item key="query_by_month">
+            <router-link to="/manage/projectByMonth">
+              按月查询
+            </router-link>
+          </a-menu-item>
           <a-sub-menu key="query-3" title="查找3-">
             <a-menu-item key="query-3_1">查找3-1</a-menu-item>
             <a-menu-item key="query-3_2">查找3-2</a-menu-item>
