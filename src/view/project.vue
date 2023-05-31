@@ -6,12 +6,12 @@
         </template>
       </template>
       <template #title>
-        <a-input v-model:value="value" placeholder="请输入要查询的项目名" style="width: 200px"/>
+        <a-input v-model:value="projectName" placeholder="请输入要查询的项目名" style="width: 200px"/>
         <a-button type="primary" v-on:click="refreshData">查询</a-button> &&
-        <a-input v-model:value="value" placeholder="请输入要查询的条数" style="width: 200px"/>
+        <a-input v-model:value="count" placeholder="请输入要查询的条数" style="width: 200px"/>
         <a-button type="primary" v-on:click="refreshData">查询</a-button> &&
-        <a-input v-model:value="value" placeholder="开始时间" style="width: 100px"/>
-        <a-input v-model:value="value" placeholder="结束时间" style="width: 100px"/>
+        <a-input v-model:value="startTime" placeholder="开始时间" style="width: 100px"/>
+        <a-input v-model:value="endTime" placeholder="结束时间" style="width: 100px"/>
         <a-button type="primary" v-on:click="refreshData">查询</a-button><br/><br/>
         <a-button type="primary" v-on:click="refreshData">多条件查询</a-button>
         </template>
