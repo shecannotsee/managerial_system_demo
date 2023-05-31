@@ -3,21 +3,29 @@ import type { user } from "@/ts/api/getUser"
 import { getUser } from "@/ts/api/getUser"
 const columns = [
   {
-    title: '姓名',
-    dataIndex: 'name',
+    title: '主机厂名',
+    dataIndex: 'oe',
   },
   {
-    title: '年龄',
-    dataIndex: 'age',
+    title: 'tier1厂商名',
+    dataIndex: 'tier1',
   },
   {
-    title: '地址',
-    dataIndex: 'address',
+    title: '协议栈软件版本',
+    dataIndex: 'vpsVersion',
   },
   {
-    title: '标签',
-    dataIndex: 'tags',
+    title: '硬件标识1',
+    dataIndex: 'hardwareId',
   },
+  {
+    title: '创建时间',
+    dataIndex: 'generationTime',
+  },
+  {
+    title: '异常信息',
+    dataIndex: 'exception',
+  }
 ];
 export  let pageData = reactive<{dataList:Array<user>}>({
   dataList: []
@@ -34,13 +42,19 @@ const refreshData = () => {
 
 export default defineComponent({
   setup() {
-    const value = ref<string>('');
+    const projectName = ref<string>('');
+    const count = ref<string>('');
+    const startTime = ref<string>('');
+    const endTime = ref<string>('');
     return {
       columns,
       pageData,
+      projectName,  // 项目名
+      count,        // 查询条数
+      startTime,    // 开始时间
+      endTime,      // 结束时间
       getUserList,
-      refreshData,
-      value // 查询输入框
+      refreshData
     };
   }
 });
