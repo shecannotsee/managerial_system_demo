@@ -3,20 +3,24 @@ import type { user } from "@/ts/api/getUser"
 import { getUser } from "@/ts/api/getUser"
 const columns = [
   {
-    title: '姓名',
-    dataIndex: 'name',
+    title: '项目名',
+    dataIndex: 'project',
   },
   {
-    title: '年龄',
-    dataIndex: 'age',
+    title: '本月申请成功数量',
+    dataIndex: 'successCountInThisMonth',
   },
   {
-    title: '地址',
-    dataIndex: 'address',
+    title: '本月申请失败数量',
+    dataIndex: 'failedCountInThisMonth',
   },
   {
-    title: '标签',
-    dataIndex: 'tags',
+    title: '所有成功数量',
+    dataIndex: 'allSuccessCount',
+  },
+  {
+    title: '所有失败数量',
+    dataIndex: 'allFailedCount',
   },
 ];
 export  let pageData = reactive<{dataList:Array<user>}>({
@@ -34,13 +38,15 @@ const refreshData = () => {
 
 export default defineComponent({
   setup() {
-    const value = ref<string>('');
+    const year = ref<string>('');
+    const month = ref<string>('');
     return {
       columns,
       pageData,
+      year,
+      month,
       getUserList,
       refreshData,
-      value // 查询输入框
     };
   }
 });
