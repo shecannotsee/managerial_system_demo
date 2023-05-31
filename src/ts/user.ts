@@ -1,6 +1,6 @@
 import { defineComponent ,reactive } from 'vue';
-import type { user } from "@/ts/api/getUser.ts"
-import { getUser } from "@/ts/api/getUser.ts"
+import type { user } from "@/ts/api/getUser"
+import { getUser } from "@/ts/api/getUser"
 const columns = [
   {
     title: '姓名',
@@ -25,7 +25,7 @@ export  let pageData = reactive<{dataList:Array<user>}>({
 
 const getUserList = async () => {
   let ret : user[] = await getUser();
-  pageData.dataList = ret.user;
+  pageData.dataList = ret;
 }
 
 const refreshData = () => {

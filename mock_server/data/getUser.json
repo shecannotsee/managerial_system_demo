@@ -2,16 +2,13 @@
   "url" : "/manage/getUser",
   "note" : "================================================",
   "data" : {
-    "user": [
+    "users": [
       {
         "key": "1",
         "name": "王一",
         "age": 32,
         "address": "王一家里",
-        "tags": [
-          "nice",
-          "developer"
-        ]
+        "tags": "老一"
       },
       {
         "key": "2",

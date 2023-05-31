@@ -1,9 +1,9 @@
 {
   "url" : "/login",
   "note" : "================================================",
-  "data" : {
-    "userName": "admin",
-    "password": "1235",
-    "token": "UHiondsfNASasAUNP"
+  "rsp": {
+    "type": 1,
+    "ret": 0,
+    "exception": "异常信息"
   }
 }

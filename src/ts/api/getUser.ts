@@ -20,7 +20,7 @@ async function getUser() :Promise<user[]> {
     console.log("getUser response:", response);
 
     // 根据实际接口返回的数据结构，获取密码并返回
-    const users = response.data;
+    const users = response.data.users;
     return users;
   }catch (error) {
     console.log("getUser error:", error);

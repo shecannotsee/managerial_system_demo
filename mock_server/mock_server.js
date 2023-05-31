@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
     // 根据请求路径返回不同的 mock 数据
     // url:/login
     /*z*/if (req.url === login.url) {
-      const ret = login.data;
+      const ret = login;
       res.statusCode = 200;
       res.write(JSON.stringify(ret));
       res.end();

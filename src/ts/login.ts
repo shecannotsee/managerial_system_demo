@@ -1,5 +1,6 @@
 import { defineComponent, reactive, getCurrentInstance } from 'vue';
-import { getPassword , getToken} from "@/ts/api/login"
+import type { login } from "@/ts/api/login"
+import {getLoginStatus, getToken} from "@/ts/api/login"
 import type { Router } from "vue-router";
 
 console.log("login.vue");
@@ -22,11 +23,17 @@ export default defineComponent({
     const onFinish = async (values: any, route : any ) => {
       console.log('Success:', values);
       try {
-        const password = await getPassword(formState.username);
+        const input : login = {
+          name : formState.username,
+          password : formState.password,
+          token : ""
+        }
+        const success : number | string = await getLoginStatus(input);
         console.log("input userName: ", formState.username);
         console.log("input password: ", formState.password);
 
-        if (formState.password === password) {
+        console.log('Success:', success);
+        if (success == "0") {
           console.log('Success:', values);
           router.push('/manage');
         } else {
