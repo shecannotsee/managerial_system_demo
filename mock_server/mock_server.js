@@ -28,7 +28,8 @@ const server = http.createServer((req, res) => {
     // 读取mock数据,url是路径,data是数据
     const login = readJsonFile("./data/login.json");
     const user = readJsonFile("./data/getUser.json");
-
+    const projectInfo = readJsonFile("./data/getProjectInfo.json");
+    const applicationCount = readJsonFile("./data/getApplicationCount.json");
 
     console.log("Request:", req.method, req.url, "HTTP", req.httpVersion); // 查看 req 对象的内容
     // 根据请求路径返回不同的 mock 数据
@@ -46,6 +47,22 @@ const server = http.createServer((req, res) => {
       res.statusCode = 200;
       res.write(JSON.stringify(ret));
       res.end();
+    }
+    // url:/manage/getProjectInfo
+    else if (req.url === projectInfo.url) {
+      const ret = projectInfo;
+      res.statusCode = 200;
+      res.write(JSON.stringify(ret));
+      res.end();
+      console.log("Response:", res.length); // 打印 res 对象的内容
+    }
+    // url:/manage/getApplicationCount
+    else if (req.url === applicationCount.url) {
+      const ret = applicationCount;
+      res.statusCode = 200;
+      res.write(JSON.stringify(ret));
+      res.end();
+      console.log("Response:", res.length); // 打印 res 对象的内容
     }
     // url:其他
     else {
