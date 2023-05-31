@@ -16,6 +16,10 @@ async function getUser() :Promise<user[]> {
   try {
     const response = await axios.post(baseUrl + '/manage/getUser', {
       condition: "all"
+    },{
+      headers: {
+        'Authorization': 'Bearer' // 替换 token 为你的实际 token 值
+      }
     });
     console.log("getUser response:", response);
 
