@@ -37,6 +37,15 @@ async function getProjectInfo ( name:queryByProjectName,
   try {
     let response : typeof AxiosResponse<any, any>;
     if (count.using === true) {
+      console.log("request body:",{
+        req : {
+          type : 3,
+          project : name.name,
+          subtype : 2,
+          dataTypes : 1,
+          count : count.num
+        }
+      });
       response = await axios.post(baseUrl + '/manage/getProjectInfo', {
         req : {
           type : 3,
@@ -51,6 +60,16 @@ async function getProjectInfo ( name:queryByProjectName,
         }
       });
     } else if ( time.using === true ) {
+      console.log("request body:",{
+        req : {
+          type : 3,
+          project : name.name,
+          subtype : 3,
+          dataTypes : 1,
+          startTime : time.startTime,
+          endTime : time.endTime
+        }
+      });
       response = await axios.post(baseUrl + '/manage/getProjectInfo', {
         req : {
           type : 3,
@@ -66,6 +85,14 @@ async function getProjectInfo ( name:queryByProjectName,
         }
       });
     } else {
+      console.log("request body:",{
+        req : {
+          type : 3,
+          project : name.name,
+          subtype : 1,
+          dataTypes : 1
+        }
+      });
       response = await axios.post(baseUrl + '/manage/getProjectInfo', {
         req : {
           type : 3,
