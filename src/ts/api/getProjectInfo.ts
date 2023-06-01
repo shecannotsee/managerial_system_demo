@@ -35,7 +35,7 @@ async function getProjectInfo ( name:queryByProjectName,
                                 time :queryByTime 
                               ) : Promise<projectInfo[]> {
   try {
-    let response : typeof AxiosResponse<any, any>;
+    let response;
     if (count.using === true) {
       console.log("request body:",{
         req : {
