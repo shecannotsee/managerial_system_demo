@@ -30,7 +30,7 @@ export  let pageData = reactive<{dataList:Array<applicationCount>}>({
 const inputYear = ref<number>(1990);
 const inputMonth = ref<number>(1);
 
-const getUserList = async () => {
+const getProjectByMonth = async () => {
   let condition: queryCriteria = {
     year: inputYear.value,
     month: inputMonth.value
@@ -40,7 +40,7 @@ const getUserList = async () => {
 }
 
 const refreshData = () => {
-  getUserList()
+  getProjectByMonth()
 }
 
 export default defineComponent({
