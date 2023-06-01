@@ -30,7 +30,7 @@ async function getApplicationCount( param:queryCriteria ) :Promise<applicationCo
         'Authorization': 'Bearer' // 替换 token 为你的实际 token 值
       }
     });
-    console.log("getUser response:", response);
+    console.log("getApplicationCount response:", response);
 
     // 根据实际接口返回的数据结构，获取并返回
     const ret = response.data.rsp.data;
