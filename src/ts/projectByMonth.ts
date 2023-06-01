@@ -1,6 +1,6 @@
 import { defineComponent , reactive , ref } from 'vue';
-import type { user } from "@/ts/api/getUser"
-import { getUser } from "@/ts/api/getUser"
+import type { queryCriteria , applicationCount } from "@/ts/api/getApplicationCount"
+import { getApplicationCount } from "@/ts/api/getApplicationCount"
 const columns = [
   {
     title: '项目名',
@@ -23,12 +23,19 @@ const columns = [
     dataIndex: 'allFailedCount',
   },
 ];
-export  let pageData = reactive<{dataList:Array<user>}>({
+export  let pageData = reactive<{dataList:Array<applicationCount>}>({
   dataList: []
 })
 
+const inputYear = ref<number>(1990);
+const inputMonth = ref<number>(1);
+
 const getUserList = async () => {
-  let ret : user[] = await getUser();
+  let condition: queryCriteria = {
+    year: inputYear.value,
+    month: inputMonth.value
+  };
+  let ret : applicationCount[] = await getApplicationCount(condition);
   pageData.dataList = ret;
 }
 
@@ -38,13 +45,11 @@ const refreshData = () => {
 
 export default defineComponent({
   setup() {
-    const year = ref<string>('');
-    const month = ref<string>('');
     return {
       columns,
       pageData,
-      year,
-      month,
+      inputYear,
+      inputMonth,
       getUserList,
       refreshData,
     };
