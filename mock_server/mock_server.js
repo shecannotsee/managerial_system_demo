@@ -73,7 +73,7 @@ const server = http.createServer((req, res) => {
 });
 
 // 启动服务器并监听指定端口
-const port = 9703;
+const port = 5000;
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
