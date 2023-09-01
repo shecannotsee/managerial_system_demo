@@ -9,6 +9,7 @@ import setting        from "@/view/setting.vue"
 import user           from "@/view/user.vue"
 import project        from "@/view/project.vue"
 import projectByMonth from "@/view/projectByMonth.vue"
+import uploadAndDownload from "@/view/uploadAndDownload.vue"
 
 export { router };
 
@@ -82,6 +83,11 @@ const router = createRouter({
           path:"/manage/projectByMonth",
           name:"projectByMonth",
           component:projectByMonth
+        },
+        {
+          path:"/manage/uploadAndDownload",
+          name:"uploadAndDownload",
+          component:uploadAndDownload
         }
 
       ]
